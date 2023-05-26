@@ -13,9 +13,10 @@ jobs:
               with:
                   path: 'athena-docs'
 
-            - name: Clone Athena Markdown API
+            - name: Clone FluffyVCore Markdown API
               uses: actions/checkout@v3
               with:
+                  token: ${{ secrets.GH_TOKEN }}
                   repository: 'fluffytal-es/fluffyv'
                   ref: 'gh-pages'
                   path: 'fluffyv'
@@ -50,6 +51,6 @@ jobs:
             - name: Deploy
               uses: peaceiris/actions-gh-pages@v3
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  github_token: ${{ secrets.GH_TOKEN }}
                   publish_dir: fluffyv-docs/docs/.vitepress/dist
                   cname: docs.fluffytal.es

@@ -9,7 +9,6 @@ export default defineConfig({
     description: 'FluffyVCore documentation for the Athena alt:v Framework',
     ignoreDeadLinks: true,
     lastUpdated: true,
-    mpa: true,
     cleanUrls: 'without-subfolders',
     markdown: {
         lineNumbers: false,

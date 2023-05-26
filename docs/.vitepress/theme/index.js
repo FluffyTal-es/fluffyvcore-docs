@@ -2,6 +2,5 @@
 import DefaultTheme from 'vitepress/theme'
 import './fluffyv.css'
 
-export default {
-    ...DefaultTheme
-}
+export default DefaultTheme
+

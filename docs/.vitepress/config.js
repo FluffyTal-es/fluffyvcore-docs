@@ -4,7 +4,6 @@ import { defineConfig } from 'vitepress'
 const BASE_URL = '/';
 
 export default defineConfig({
-
     base: BASE_URL,
     title: 'FluffyVCore Docs',
     description: 'FluffyVCore documentation for the Athena alt:v Framework',

@@ -35,8 +35,7 @@ function groupByPathway(folderPath, filterByName) {
 }
 
 export function getSidebar() {
-    return {
-        '/': [
+    return[
             {
                 text: 'Info',
                 collapsible: false,
@@ -104,6 +103,6 @@ export function getSidebar() {
                 ]
             }
         ]
-    }
+    
 };
 

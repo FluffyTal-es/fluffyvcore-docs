@@ -46,7 +46,11 @@ export function getSidebar() {
                 text: 'FluffyVCore Server',
                 collapsed: false,
                 items: [
-                    ...groupByPathway('./docs/modules', 'server_'),
+                    {
+                        text: 'Modules',
+                        collapsed: true,
+                        items: groupByPathway('./docs/modules', 'server_')
+                    },
                     {
                         text: 'Classes',
                         collapsed: true,
@@ -68,7 +72,11 @@ export function getSidebar() {
                 text: 'FluffyVCore Client',
                 collapsed: false,
                 items: [
-                    ...groupByPathway('./docs/modules', 'client_'),
+                    {
+                        text: 'Modules',
+                        collapsed: true,
+                        items: groupByPathway('./docs/modules', 'client_')
+                    },
                     {
                         text: 'Classes',
                         collapsed: true,
@@ -90,9 +98,9 @@ export function getSidebar() {
                 text: 'FluffyVCore Shared',
                 collapsed: false,
                 items: [
-                    ...groupByPathway('./docs/modules', 'shared_utility'),
-                    ...groupByPathway('./docs/modules', 'shared_locale'),
-                    ...groupByPathway('./docs/interfaces', 'shared_')
+                    ...groupByPathway('./docs/modules', 'shared_'),
+                    ...groupByPathway('./docs/interfaces', 'shared_'),
+                    ...groupByPathway('./docs/enums', 'shared_')
                 ]
             }
         ]

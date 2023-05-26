@@ -17,12 +17,6 @@
     "build": "node ./scripts/titles/index.js & vitepress build docs",
     "serve": "vitepress serve docs"
   },
-  "prettier": {
-    "tabWidth": 4,
-    "printWidth": 120,
-    "singleQuote": true,
-    "semi": true
-  },
   "dependencies": {
     "@giscus/vue": "^2.2.8",
     "@stuyk/vitepress-sidebar-builder": "^1.0.2",

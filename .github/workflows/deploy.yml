@@ -1,10 +1,8 @@
-name: Deploy
-
 on:
-    push:
-        branches:
-            - main
-    workflow_dispatch:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
     deploy:
@@ -18,23 +16,23 @@ jobs:
             - name: Clone Athena Markdown API
               uses: actions/checkout@v3
               with:
-                  repository: 'stuyk/altv-athena'
+                  repository: 'fluffytal-es/fluffyv'
                   ref: 'gh-pages'
-                  path: 'altv-athena'
+                  path: 'fluffyv'
 
             - name: 'Clean Old API Docs'
               run: |
-                  rm -rf ./athena-docs/docs/api/classes
-                  rm -rf ./athena-docs/docs/api/enums
-                  rm -rf ./athena-docs/docs/api/interfaces
-                  rm -rf ./athena-docs/docs/api/modules
+                  rm -rf ./fluffyv-docs/docs/api/classes
+                  rm -rf ./fluffyv-docs/docs/api/enums
+                  rm -rf ./fluffyv-docs/docs/api/interfaces
+                  rm -rf ./fluffyv-docs/docs/api/modules
 
             - name: 'Move New API Docs'
               run: |
-                  mv ./altv-athena/classes ./athena-docs/docs/api/classes
-                  mv ./altv-athena/enums ./athena-docs/docs/api/enums
-                  mv ./altv-athena/interfaces ./athena-docs/docs/api/interfaces
-                  mv ./altv-athena/modules ./athena-docs/docs/api/modules
+                  mv ./fluffyv/classes ./fluffyv-docs/docs/api/classes
+                  mv ./fluffyv/enums ./fluffyv-docs/docs/api/enums
+                  mv ./fluffyv/interfaces ./fluffyv-docs/docs/api/interfaces
+                  mv ./fluffyv/modules ./fluffyv-docs/docs/api/modules
 
             - name: 'Install NodeJS'
               uses: actions/setup-node@v3
@@ -42,16 +40,16 @@ jobs:
                   node-version: 16
 
             - name: Install Docs
-              working-directory: 'athena-docs'
+              working-directory: 'fluffyv-docs'
               run: npm install
 
             - name: Build Docs
-              working-directory: 'athena-docs'
+              working-directory: 'fluffyv-docs'
               run: npm run build
 
             - name: Deploy
               uses: peaceiris/actions-gh-pages@v3
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: athena-docs/docs/.vitepress/dist
-                  cname: athenaframework.com
+                  publish_dir: fluffyv-docs/docs/.vitepress/dist
+                  cname: docs.fluffytal.es

@@ -36,92 +36,63 @@ function groupByPathway(folderPath, filterByName) {
 
 export function getSidebar() {
     return {
-        '/blog/': [
-            {
-                text: 'About',
-                collapsible: true,
-                items: SidebarBuilder.get.filesAndOrder('./docs/blog')
-            },
-            {
-                text: 'Posts',
-                collapsible: true,
-                items: SidebarBuilder.get.filesAndOrder('./docs/blog/posts')
-            },
-        ],
-        '/tutorials': [
-            {
-                text: 'Setup',
-                collapsed: false,
-                items: SidebarBuilder.get.filesAndOrder('./docs/tutorials/free/setup')
-            },
-            {
-                text: 'Examples',
-                collapsed: false,
-                items: SidebarBuilder.get.filesAndOrder('./docs/tutorials/free/top')
-            },
-            {
-                text: 'Making Plugins',
-                collapsed: true,
-                items: SidebarBuilder.get.filesAndOrder('./docs/tutorials/free/making-plugins')
-            },
-            {
-                text: 'Modding',
-                collapsed: true,
-                items: SidebarBuilder.get.filesAndOrder('./docs/tutorials/free/modding')
-            },
-            {
-                text: 'Subscribers Only',
-                collapsed: true,
-                items: SidebarBuilder.get.filesAndOrder('./docs/tutorials/premium')
-            }
-        ],
-        '/api': [
+        '/': [
             {
                 text: 'Info',
                 collapsible: false,
-                items: SidebarBuilder.get.filesAndOrder('./docs/api')
+                items: SidebarBuilder.get.filesAndOrder('./docs/')
             },
             {
-                text: 'Athena.',
+                text: 'FluffyVCore Server',
                 collapsed: false,
                 items: [
-                    ...groupByPathway('./docs/api/modules', 'server_'),
+                    ...groupByPathway('./docs/modules', 'server_'),
                     {
                         text: 'Classes',
                         collapsed: true,
-                        items: groupByPathway('./docs/api/classes', 'server_')
+                        items: groupByPathway('./docs/classes', 'server_')
                     },
                     {
                         text: 'Interfaces',
                         collapsed: true,
-                        items: groupByPathway('./docs/api/interfaces', 'server_')
+                        items: groupByPathway('./docs/interfaces', 'server_')
+                    },
+                    {
+                        text: 'Enums',
+                        collapsed: true,
+                        items: groupByPathway('./docs/enums', 'server_')
                     }
                 ]
             },
             {
-                text: 'AthenaClient.',
+                text: 'FluffyVCore Client',
                 collapsed: false,
                 items: [
-                    ...groupByPathway('./docs/api/modules', 'client_'),
+                    ...groupByPathway('./docs/modules', 'client_'),
                     {
                         text: 'Classes',
                         collapsed: true,
-                        items: groupByPathway('./docs/api/classes', 'client_')
+                        items: groupByPathway('./docs/classes', 'client_')
                     },
                     {
                         text: 'Interfaces',
                         collapsed: true,
-                        items: groupByPathway('./docs/api/interfaces', 'client_')
+                        items: groupByPathway('./docs/interfaces', 'client_')
+                    },
+                    {
+                        text: 'Enums',
+                        collapsed: true,
+                        items: groupByPathway('./docs/enums', 'client_')
                     }
                 ]
             },
             {
-                text: 'AthenaShared.',
+                text: 'FluffyVCore Shared',
                 collapsed: false,
                 items: [
-                    ...groupByPathway('./docs/api/modules', 'shared_utility'),
-                    ...groupByPathway('./docs/api/modules', 'shared_locale'),
-                    ...groupByPathway('./docs/api/interfaces', 'shared_')
+                    ...groupByPathway('./docs/modules', 'shared_utility'),
+                    ...groupByPathway('./docs/modules', 'shared_locale'),
+                    ...groupByPathway('./docs/interfaces', 'shared_')
                 ]
             }
         ]

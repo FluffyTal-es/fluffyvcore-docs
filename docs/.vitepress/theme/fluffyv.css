@@ -106,7 +106,7 @@
 
     --vp-c-text-code: var(--vp-c-indigo-soft);
 
-    --vp-c-brand: var(--vp-c-green);
+    --vp-c-brand: #65BFB2;
     --vp-c-brand-light: var(--vp-c-green-light);
     --vp-c-brand-lighter: var(--vp-c-green-lighter);
     --vp-c-brand-dark: var(--vp-c-green-dark);
@@ -361,12 +361,7 @@
 }
 
 .Layout {
-    background-color: var(--vp-c-bg-alt) !important;
-    background: url('/bg.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: bottom;
-    background-size: cover;
+    background-color: #131419 !important;
 }
 
 .aside-curtain {
@@ -374,12 +369,12 @@
 }
 
 .VPSidebar {
-    background: rgba(48, 48, 48, 0.35) !important;
+    background: rgba(0, 0, 0, 0.35) !important;
 }
 
 @media only screen and (max-width: 600px) {
     .VPSidebar {
-        background: rgba(30, 30, 30, 1) !important;
+        background: rgba(19, 20, 25, 1) !important;
     }
 }
 
@@ -396,7 +391,7 @@
 }
 
 .VPNav {
-    background: var(--vp-c-bg);
+    background: #09090b !important;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 

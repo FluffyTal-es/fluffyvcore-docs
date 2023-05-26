@@ -1,6 +1,6 @@
-# alt:V Athena Documentation
+# alt:V FluffyVCore Documentation
 
-Official documentation repository that utilizes vitepress, and used as the home page for `https://athenaframework.com/`.
+Official documentation repository that utilizes vitepress, and used as the website for `https://docs.fluffytal.es/`.
 
 ## Viewing Docs Locally
 

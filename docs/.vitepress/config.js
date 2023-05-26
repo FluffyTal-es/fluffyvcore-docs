@@ -6,8 +6,8 @@ const BASE_URL = '/';
 export default defineConfig({
 
     base: BASE_URL,
-    title: 'V5 Docs',
-    description: 'Roleplay Script for GTA:V',
+    title: 'FluffyVCore Docs',
+    description: 'FluffyVCore documentation for the Athena alt:v Framework',
     ignoreDeadLinks: true,
     lastUpdated: true,
     cleanUrls: 'without-subfolders',
@@ -18,8 +18,8 @@ export default defineConfig({
     themeConfig: {
         logo: '/logo.png',
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/stuyk/altv-athena' },
-            { icon: 'discord', link: 'https://ares.stuyk.com/v1/get/discord' },
+            { icon: 'github', link: 'https://github.com/fluffytal-es/fluffyv' },
+            { icon: 'discord', link: 'https://discord.gg/fluffytales' },
         ],
         // Search
         search: {
@@ -28,61 +28,30 @@ export default defineConfig({
         // Navigation - Top of the Documentation Page Links
         nav: [
             {
-                text: 'Blog',
-                link: '/blog/index',
-            },
-            {
                 text: 'API',
-                link: '/api/index'
+                link: 'index'
             },
             {
-                text: 'Guides',
-                link: '/tutorials/index'
-            },
-            {
-                text: 'Tools',
+                text: 'Links',
                 items: [
                     {
-                        text: 'Athena Toolkit',
-                        link: '/tools/toolkit',
-                    },
-                ],
-            },
-            {
-                text: 'Versions & Links',
-                items: [
-                    {
-                        text: 'Doc Versions',
-                        items: [
-                            {
-                                text: 'v4 Docs',
-                                link: 'https://stuyk.github.io/athena-docs-v4/',
-                            },
-                        ],
+                        text: 'alt:V Client',
+                        link: 'https://altv.mp',
                     },
                     {
-                        text: 'Partners',
-                        items: [
-                            {
-                                text: 'alt:V Client',
-                                link: 'https://altv.mp',
-                            },
-                            {
-                                text: 'alt:V Native Database',
-                                link: 'https://natives.altv.mp',
-                            },
-                            {
-                                text: 'GTA:V Data Browser',
-                                link: 'https://forge.plebmasters.de/',
-                            },
-                        ],
+                        text: 'alt:V Native Database',
+                        link: 'https://natives.altv.mp',
+                    },
+                    {
+                        text: 'GTA:V Data Browser',
+                        link: 'https://forge.plebmasters.de/',
                     },
                 ],
             },
         ],
         // Footer - Bottom of the Documentation Page
         footer: {
-            message: 'Created by Stuyk | Est. 2020',
+            message: 'Created by the FluffyTales Dev Team | © 2023',
         },
         // Page - Next & Previous Buttons
         docFooter: {
@@ -99,7 +68,6 @@ export default defineConfig({
         ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: BASE_URL + 'favicon-32x32.png' }],
         ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: BASE_URL + 'favicon-16x16.png' }],
         ['link', { rel: 'manifest', href: BASE_URL + 'site.webmanifest' }],
-        ['link', { rel: 'mask-icon', href: BASE_URL + 'safari-pinned-tab.svg', color: '#5bbad5' }],
-        ['meta', { name: 'msapplication-TileColor', content: '#da532c' }],
+        ['meta', { name: 'msapplication-TileColor', content: '#131419' }],
     ],
 });

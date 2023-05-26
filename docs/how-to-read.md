@@ -25,7 +25,7 @@ Inside you will find a _similar_ folder structure to the default intellisense wh
 
 When you are reading a page it's going to look like a bunch of random words if you've never seen an API page before.
 
-In the example below we will be using the following pathway in the server API: `Athena.controllers.blip`
+In the example below we will be using the following pathway in the server API: `FluffyVCore.player`
 
 ### Right Sidebar
 
@@ -33,13 +33,13 @@ On the right-hand side you will see a sidebar of all the available functions. Th
 
 ![](https://i.imgur.com/HoF4yxw.png)
 
-Knowing that the API pathway is `Athena.controllers.blip`, we can append a function name to the end of our code.
+Knowing that the API pathway is `FluffyVCore.player`, we can append a function name to the end of our code.
 
 ```ts
-import * as Athena from '@AthenaServer/api';
+import * as FluffyVCore from '@FluffyVCore/server';
 
-// append is the function name
-Athena.controllers.blip.append();
+// setPositionAndRotation is the function name
+FluffyVCore.player.setPositionAndRotation()
 ```
 
 Now how do we determine what we should pass inside of the parenthesis?
@@ -48,7 +48,7 @@ Now how do we determine what we should pass inside of the parenthesis?
 
 These are the values that need to be passed inside of the function, they should be passed in the same order that they are listed in the table.
 
-In the case of `Athena.controllers.blip.append` we have exactly `1` parameter.
+In the case of `FluffyVCore.player.setPositionAndRotation` we have multiple parameters.
 
 ![](https://i.imgur.com/lqfC9sA.png)
 

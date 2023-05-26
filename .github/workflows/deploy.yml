@@ -30,10 +30,10 @@ jobs:
 
             - name: 'Move New API Docs'
               run: |
-                  [ ! -f ./fluffyv/classes ] || mv ./fluffyv/classes ./fluffyv-docs/docs/api/classes
-                  [ ! -f ./fluffyv/enums ] || mv ./fluffyv/enums ./fluffyv-docs/docs/api/enums
-                  [ ! -f /fluffyv/interfaces ] || mv ./fluffyv/interfaces ./fluffyv-docs/docs/api/interfaces
-                  [ ! -f ./fluffyv/modules ] || mv ./fluffyv/modules ./fluffyv-docs/docs/api/modules
+                  [ ! -d ./fluffyv/classes ] || mv ./fluffyv/classes ./fluffyv-docs/docs/api/classes
+                  [ ! -d ./fluffyv/enums ] || mv ./fluffyv/enums ./fluffyv-docs/docs/api/enums
+                  [ ! -d /fluffyv/interfaces ] || mv ./fluffyv/interfaces ./fluffyv-docs/docs/api/interfaces
+                  [ ! -d ./fluffyv/modules ] || mv ./fluffyv/modules ./fluffyv-docs/docs/api/modules
 
             - name: 'Install NodeJS'
               uses: actions/setup-node@v3

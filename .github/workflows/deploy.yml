@@ -11,7 +11,7 @@ jobs:
             - name: Clone Docs Repo
               uses: actions/checkout@v3
               with:
-                  path: 'athena-docs'
+                  path: 'fluffyv-docs'
 
             - name: Clone FluffyVCore Markdown API
               uses: actions/checkout@v3
@@ -30,10 +30,10 @@ jobs:
 
             - name: 'Move New API Docs'
               run: |
-                  mv ./fluffyv/classes ./fluffyv-docs/docs/api/classes
-                  mv ./fluffyv/enums ./fluffyv-docs/docs/api/enums
-                  mv ./fluffyv/interfaces ./fluffyv-docs/docs/api/interfaces
-                  mv ./fluffyv/modules ./fluffyv-docs/docs/api/modules
+                  [ -f ./fluffyv/classes ] && mv ./fluffyv/classes ./fluffyv-docs/docs/api/classes
+                  [ -f ./fluffyv/enums ] && mv ./fluffyv/enums ./fluffyv-docs/docs/api/enums
+                  [ -f /fluffyv/interfaces ] && mv ./fluffyv/interfaces ./fluffyv-docs/docs/api/interfaces
+                  [ -f ./fluffyv/modules ] && mv ./fluffyv/modules ./fluffyv-docs/docs/api/modules
 
             - name: 'Install NodeJS'
               uses: actions/setup-node@v3

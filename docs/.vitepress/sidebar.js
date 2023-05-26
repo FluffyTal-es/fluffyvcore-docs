@@ -5,30 +5,41 @@ function groupByPathway(folderPath, filterByName) {
 
     const files = SidebarBuilder.get.filesAndOrder(folderPath).filter(x => x.link.includes(filterByName))
     for (let file of files) {
-        if (!file.title) {
-            continue;
+      console.log(file)
+      if (!file.title) {
+        continue;
+      }
+
+      const splitFileName = file.title.split('.');
+      splitFileName.shift();
+      const groupName = splitFileName[0];
+      splitFileName.shift();
+
+      if (typeof groups[groupName] === 'undefined') {
+        groups[groupName] = {
+          text: groupName,
+          collapsed: true,
+          items: []
         }
+      }
 
-        const splitFileName = file.title.split('.');
-        splitFileName.shift();
-        const groupName = splitFileName[0];
-        splitFileName.shift();
+      const newFile = {
+        ...file,
+        title: splitFileName.join('.'),
+        text: splitFileName.join('.'),
+      }
 
-        if (typeof groups[groupName] === 'undefined') {
-            groups[groupName] = {
-                text: groupName,
-                collapsed: true,
-                items: []
-            }
-        }
+      if (file.link.split('_').length === 2) {
+        groups[groupName].items.unshift({
+          title: groupName,
+          outline: [0,5],
+          order: 0,
+          text: 'main',
+          link: file.link
+        })
+      }
 
-        const newFile = {
-            ...file,
-            title: splitFileName.join('.'),
-            text: splitFileName.join('.'),
-        }
-
-        groups[groupName].items.push(newFile);
+      groups[groupName].items.push(newFile);
     }
 
     return Object.values(groups);
